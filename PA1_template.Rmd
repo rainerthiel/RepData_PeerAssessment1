@@ -38,18 +38,38 @@ summary(activity)
 
 ## Assignment Questions
 
-### Q1: What is mean total number of steps taken per day?
-Group and summarize the data to show daily total steps. Make a histogram.
+#### Q1: What is mean total number of steps taken per day?
+
+Group and summarize the data to show daily total steps. Missing values are omitted.
+
 ```{r}
 daily_steps <- summarize(group_by(na.omit(activity), date), steps = sum(steps))
+```
+
+Generate a histogram that shows the frequency (number of days) of daily steps taken. Bin width is 1000.
+
+```{r}
 ggplot(daily_steps, aes(x=steps)) +
-    geom_histogram(binwidth = 2500, color = "gray", fill = "wheat") +
+    geom_histogram(binwidth = 1000, color = "gray", fill = "wheat") +
     labs(x = "Daily total steps",
          y = "Number of days",
          title = "Histogram of steps per day")
 ```
 
-### Q2: What is the average daily activity pattern?
+Calculate the mean and median of total daily steps.
+```{r results="hide"}
+mn <- as.integer(mean(daily_steps$steps))
+md <- median(daily_steps$steps)
+```
+
+Mean daily steps: `r mn`
+
+Median daily steps: `r md`
+
+---
+
+
+#### Q2: What is the average daily activity pattern?
 
 
 
