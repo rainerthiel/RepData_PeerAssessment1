@@ -7,6 +7,17 @@ output:
     toc: TRUE  
     keep_md: true
 ---
+
+<strong><p style="color: red">
+******* IMPORTANT NOTE TO PEER REVIEWERS *******<br/><br/>
+The generated markdown file (.md) does not render correctly in GitHub.<br/>
+i) ToC is missing, ii) Internal links do not work.<br/><br/>
+I ask please that you either open the .html file in your browser or view the .md
+file in RStudio.<br/><br/>
+Thank you
+</p></strong>
+
+
 ## Introduction
 This assignment is intended to demonstrate a basic understanding of Reproducible Research principles using the tools R Markdown and knitr to generate a single document artifact (as html) that includes text, code and plots created during the course of the 'research'.
 
