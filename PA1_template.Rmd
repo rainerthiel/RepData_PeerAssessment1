@@ -31,6 +31,7 @@ library(cowplot)
 ```
 ### Loading and preprocessing the data
 <div style="text-align: right;">[top](#TOC)</div>
+
 No need to download the dataset. It already exists as a zip file in the working directory.
 ```{r}
 unzip("activity.zip")
@@ -83,6 +84,7 @@ results_table %>% kbl() %>% kable_material(c("striped"))
 
 ### Question 2
 <div style="text-align: right;">[top](#TOC)</div>
+
 > *"What is the average daily activity pattern?"*
 
 
@@ -113,6 +115,7 @@ The maximum steps average is **`r round(ms$steps)`** at **`r str_pad(ms$interval
 
 ### Question 3
 <div style="text-align: right;">[top](#TOC)</div>
+
 >*"Imputing missing values"*
 
 Get a count of observations in the `activity` dataset that have missing values.
@@ -205,6 +208,7 @@ When NA values are imputed (Question 3 `nona_daily_steps`) we end up with the fu
 
 ### Question 4
 <div style="text-align: right;">[top](#TOC)</div>
+
 >*"Are there differences in activity patterns between weekdays and weekends?"*
 
 We are using the `nona_activity` (imputed values) dataset for this question.
@@ -266,7 +270,7 @@ ggplot() +
     labs(x = "Interval (hhmm)",
          y = "Average steps taken",
          title = "Average daily activity pattern",
-         subtitle = "Workkdays and weekend") +
+         subtitle = "Workdays and weekend") +
     scale_color_manual(name='Weekday',
                        labels=c('Workday (Mon-Fri)', 'Weekend (Sat-Sun)'),
                        values=c('steelblue', 'coral'))
