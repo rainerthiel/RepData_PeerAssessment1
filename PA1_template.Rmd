@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: 
   html_document:
     toc: TRUE  
-    keep_md: false
+    keep_md: true
 ---
 ## Introduction
 This assignment is intended to demonstrate a basic understanding of Reproducible Research principles using the tools R Markdown and knitr to generate a single document artifact (as html) that includes text, code and plots created during the course of the 'research'.
@@ -57,12 +57,13 @@ daily_steps <- summarize(group_by(na.omit(activity), date), steps = sum(steps))
 Generate a histogram that shows the frequency (number of days) of daily steps taken. Bin width is 1000.
 
 ```{r}
-ggplot(daily_steps, aes(x=steps)) +
-    geom_histogram(binwidth = 1000, color = "gray", fill = "wheat") +
-    labs(x = "Daily total steps",
-         y = "Number of days",
-         title = "Histogram of steps per day",
-         subtitle = "Missing values excluded")
+hist_q1 <- ggplot(daily_steps, aes(x=steps)) +
+               geom_histogram(binwidth = 1000, color = "gray", fill = "wheat") +
+               labs(x = "Daily total steps",
+                    y = "Number of days",
+                    title = "Histogram of steps per day",
+                    subtitle = "Missing values excluded")
+hist_q1
 ```
 
 Create a results dataset that shows the calculated mean and median values of total daily steps for the `daily_steps` table.
@@ -161,12 +162,13 @@ and there are **`r sum(is.na(nona_activity$steps))`** missing values.
 ```{r}
 nona_daily_steps <- summarize(group_by(nona_activity, date), steps = sum(steps))
 
-ggplot(nona_daily_steps, aes(x=steps)) +
-    geom_histogram(binwidth = 1000, color = "gray", fill = "wheat") +
-    labs(x = "Daily total steps",
-         y = "Number of days",
-         title = "Histogram of steps per day",
-         subtitle = "Missing values imputed")
+hist_q3 <- ggplot(nona_daily_steps, aes(x=steps)) +
+               geom_histogram(binwidth = 1000, color = "gray", fill = "wheat") +
+               labs(x = "Daily total steps",
+                    y = "Number of days",
+                    title = "Histogram of steps per day",
+                    subtitle = "Missing values imputed")
+hist_q3
 ```
 
 Append (`rbind`)the calculated mean and median values of total daily steps for the `nona_daily_steps` table onto the `results_table` created for Question 1.
@@ -203,6 +205,15 @@ there are 53 days of observations.
 
 When NA values are imputed (Question 3 `nona_daily_steps`) we end up with the full complement of
 61 days of observations.
+
+The 2 histograms are shown together below - have a look at the y-axes
+```{r}
+plot_grid(hist_q1, hist_q3, ncol = 2)
+```
+
+```{r}
+```
+
 
 ---
 
