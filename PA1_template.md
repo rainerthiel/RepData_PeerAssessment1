@@ -11,7 +11,7 @@ output:
 <strong><p style="color: red">
 ******* IMPORTANT NOTE TO PEER REVIEWERS *******<br/><br/>
 The generated markdown file (.md) does not render correctly in GitHub.<br/>
-i) ToC is missing, ii) Internal links do not work, iii) Chart graphic (Question4) are missing.<br/><br/>
+i) ToC is missing, ii) Internal links do not work.<br/><br/>
 I ask please that you either open the .html file in your browser or view the .md
 file in RStudio.<br/><br/>
 Thank you
