@@ -8,13 +8,15 @@ output:
     keep_md: true
 ---
 
-<strong><p style="color: red">
-******* IMPORTANT NOTE TO PEER REVIEWERS *******<br/><br/>
+<strong><p>
+NOTE TO PEER REVIEWERS<br/><br/>
 The generated markdown file (.md) does not render correctly in GitHub.<br/>
-i) ToC is missing, ii) Internal links do not work.<br/><br/>
-I ask please that you either open the .html file in your browser or view the .md
+i) Table of Contents is missing, ii) Internal links do not work.<br/><br/>
+These are minor issues that don't interfere with your review. If you want to
+see correct rendering please either open the .html file in your browser or view the .md
 file in RStudio.<br/><br/>
-Thank you
+Thank you<br/><br/>
+END NOTE
 </p></strong>
 
 
